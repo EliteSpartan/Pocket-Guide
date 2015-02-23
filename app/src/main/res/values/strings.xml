@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Material Test</string>
+    <string name="hello_world">Hello world!</string>
+
+    <!-- Menu Item Names -->
+    <string name="action_settings">Settings</string>
+    <string name="action_help">Help</string>
+    <string name="action_search">Search</string>
+
+    <string name="search_hint">Search</string>
+
+    <!-- Drawer Titles -->
+    <string-array name="drawer_titles_top">
+
+        <item>Game Versions</item>
+        <item>Pinned</item>
+
+    </string-array>
+
+    <!-- Drawer Bottom Titles -->
+    <string name="drawer_footer_settings">Settings</string>
+    <string name="drawer_footer_help">Help</string> <!-- old = (&#38; Feedback) -->
+    <string name="drawer_footer_feedback">Feedback</string>
+
+    <!-- Card Titles -->
+    <string name="card_title_pc">Minecraft PC Edition</string>
+    <string name="card_title_xbox360">Minecraft Xbox 360 Edition</string>
+    <string name="card_title_ps3">Minecraft PS3 Edition</string>
+    <string name="card_title_pocketed">Minecraft Pocket Edition</string>
+
+    <!-- Activity Titles -->
+    <string name="title_activity_minecraft_pc">"Minecraft PC"</string>
+    <string name="title_activity_minecraft_pe">Minecraft Pocket Edition</string>
+    <string name="title_activity_categories_detail_list">CategoriesDetailList</string>
+
+    <!-- PC Category Item Titles -->
+    <string-array name="categories_pc_titles">
+
+        <item>Food</item>
+        <item>Tools</item>
+        <item>Blocks</item>
+        <item>Items</item>
+        <item>Ores</item>
+        <item>Decorations</item>
+
+    </string-array>
+
+    <!-- PC Category Descriptions -->
+    <string-array name="pc_categories_descriptions">
+
+        <item>Some stuff that you can eat</item>
+        <item>Things that you can use</item>
+        <item>Other stuffs</item>
+        <item>More stuffs</item>
+        <item>Important stuffs</item>
+        <item>YAY! the decorations</item>
+
+    </string-array>
+
+        <!-- PC Category Food Detail Titles -->
+        <string-array name="pc_categories_detail_titles">
+
+            <item>Bread</item>
+            <item>Cake</item>
+            <item>Steak</item>
+            <item>Pork</item>
+            <item>Chicken</item>
+
+        </string-array>
+
+        <!-- PC Category Default Titles -->
+        <string-array name="pc_categories_demo">
+
+            <item>1</item>
+            <item>1</item>
+            <item>1</item>
+
+        </string-array>
+
+
+</resources>

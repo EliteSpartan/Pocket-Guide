@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        android:alpha="30"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="16dp"
+        android:paddingBottom="16dp"
+        android:paddingTop="16dp"
+        android:onClick="launchSettings"
+        android:clickable="true"
+        android:textAllCaps="false"
+        android:textSize="14sp"
+        android:background="@drawable/drawer_item_click"
+        android:textColor="@android:color/black"
+        android:text="@string/drawer_footer_settings"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="16dp"
+        android:paddingBottom="16dp"
+        android:paddingTop="16dp"
+        android:onClick="launchHelp"
+        android:clickable="true"
+        android:textAllCaps="false"
+        android:textColor="@android:color/black"
+        android:background="@drawable/drawer_item_click"
+        android:textSize="14sp"
+        android:text="@string/drawer_footer_help"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="16dp"
+        android:paddingBottom="16dp"
+        android:paddingTop="16dp"
+        android:onClick="launchFeedback"
+        android:clickable="true"
+        android:textAllCaps="false"
+        android:textColor="@android:color/black"
+        android:background="@drawable/drawer_item_click"
+        android:textSize="14sp"
+        android:text="@string/drawer_footer_feedback"/>
+
+</LinearLayout>
