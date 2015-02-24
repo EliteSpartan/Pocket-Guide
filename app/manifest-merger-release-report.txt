@@ -84,7 +84,7 @@ ADDED from AndroidManifest.xml:35:9
 		ADDED from AndroidManifest.xml:38:13
 	android:name
 		ADDED from AndroidManifest.xml:36:13
-activity#com.chiller.apps.materialtest.categories.CategoriesDetailList
+activity#com.chiller.apps.materialtest.CategoriesDetailList
 ADDED from AndroidManifest.xml:43:9
 	android:label
 		ADDED from AndroidManifest.xml:45:13

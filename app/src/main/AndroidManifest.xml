@@ -41,7 +41,7 @@
                 android:value="com.chiller.apps.materialtest.MainActivity" />
         </activity>
         <activity
-            android:name=".categories.CategoriesDetailList"
+            android:name=".CategoriesDetailList"
             android:label="@string/title_activity_categories_detail_list" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

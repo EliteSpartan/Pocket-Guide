@@ -1,4 +1,4 @@
-package com.chiller.apps.materialtest;
+package com.chiller.apps.materialtest.Adapters;
 
 import android.app.Activity;
 import android.view.LayoutInflater;
@@ -8,9 +8,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-/**
- * Created by Anthony on 21/12/2014.
- */
+import com.chiller.apps.materialtest.R;
+
 public class DrawerList extends ArrayAdapter<String> {
 
     private final Activity context;

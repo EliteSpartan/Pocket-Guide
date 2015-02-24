@@ -12,8 +12,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.chiller.apps.materialtest.R;
-import com.chiller.apps.materialtest.categories.CategoriesDetailList;
-import com.chiller.apps.materialtest.categories.CategoriesList;
+import com.chiller.apps.materialtest.CategoriesDetailList;
+import com.chiller.apps.materialtest.Adapters.CategoriesListAdapter;
 
 public class MinecraftPC extends ActionBarActivity {
 
@@ -50,7 +50,7 @@ public class MinecraftPC extends ActionBarActivity {
         mListTitles = getResources().getStringArray(R.array.categories_pc_titles);
         mListDesc = getResources().getStringArray(R.array.pc_categories_descriptions);
 
-        CategoriesList listAdapter = new CategoriesList(MinecraftPC.this, mListTitles, mListDesc, mImageId);
+        CategoriesListAdapter listAdapter = new CategoriesListAdapter(MinecraftPC.this, mListTitles, mListDesc, mImageId);
         mListView.setAdapter(listAdapter);
         mListView.setOnItemClickListener(new ListClickListener());
     }

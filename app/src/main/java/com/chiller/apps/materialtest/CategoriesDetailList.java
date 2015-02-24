@@ -1,4 +1,4 @@
-package com.chiller.apps.materialtest.categories;
+package com.chiller.apps.materialtest;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
 
+import com.chiller.apps.materialtest.Adapters.CategoriesDetailAdapter;
 import com.chiller.apps.materialtest.R;
 
 public class CategoriesDetailList extends ActionBarActivity {

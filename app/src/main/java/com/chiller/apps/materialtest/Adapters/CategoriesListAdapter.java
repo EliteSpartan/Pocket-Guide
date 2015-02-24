@@ -1,4 +1,4 @@
-package com.chiller.apps.materialtest.categories;
+package com.chiller.apps.materialtest.Adapters;
 
 import android.app.Activity;
 import android.view.LayoutInflater;
@@ -13,14 +13,14 @@ import com.chiller.apps.materialtest.R;
 /**
  * Created by Anthony on 9/02/2015.
  */
-public class CategoriesList extends ArrayAdapter<String> {
+public class CategoriesListAdapter extends ArrayAdapter<String> {
 
     private final Activity mContext;
     private final String[] mTitle;
     private final String[] mDesc;
     private final Integer[] mImageId;
 
-    public CategoriesList(Activity mContext, String[] mTitle, String[] mDesc, Integer[] mImageId) {
+    public CategoriesListAdapter(Activity mContext, String[] mTitle, String[] mDesc, Integer[] mImageId) {
 
         super(mContext, R.layout.categories_item, mTitle);
 
