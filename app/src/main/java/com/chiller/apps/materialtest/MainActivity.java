@@ -20,6 +20,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.chiller.apps.materialtest.minecraft.MinecraftPC;
@@ -31,6 +32,8 @@ public class MainActivity extends ActionBarActivity {
 
     DrawerLayout mDrawerLayout;
     ActionBarDrawerToggle mDrawerToggle;
+
+    TextView textView;
 
     CharSequence mTitle;
     String[] mDrawerTitles;
