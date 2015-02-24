@@ -22,7 +22,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.afollestad.materialdialogs.MaterialDialog;
-import com.chiller.apps.materialtest.Adapters.DrawerList;
+import com.chiller.apps.materialtest.adapters.DrawerList;
 import com.chiller.apps.materialtest.minecraft.MinecraftPC;
 import com.chiller.apps.materialtest.minecraft.MinecraftPE;
 import com.nispok.snackbar.Snackbar;

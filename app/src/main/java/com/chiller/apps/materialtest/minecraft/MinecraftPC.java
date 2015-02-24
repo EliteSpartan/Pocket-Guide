@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 import com.chiller.apps.materialtest.R;
 import com.chiller.apps.materialtest.CategoriesDetailList;
-import com.chiller.apps.materialtest.Adapters.CategoriesListAdapter;
+import com.chiller.apps.materialtest.adapters.CategoriesListAdapter;
 
 public class MinecraftPC extends ActionBarActivity {
 

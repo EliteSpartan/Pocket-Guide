@@ -1,4 +1,4 @@
-package com.chiller.apps.materialtest.Adapters;
+package com.chiller.apps.materialtest.adapters;
 
 import android.app.Activity;
 import android.view.LayoutInflater;
