@@ -33,6 +33,8 @@ public class MainActivity extends ActionBarActivity {
     DrawerLayout mDrawerLayout;
     ActionBarDrawerToggle mDrawerToggle;
 
+    TextView textView;
+
     CharSequence mTitle;
     String[] mDrawerTitles;
     Integer[] imageId = {
