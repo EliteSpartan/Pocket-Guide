@@ -32,7 +32,7 @@ public class CategoriesDetailAdapter extends ArrayAdapter<String> {
     public View getView(int position, View view, ViewGroup parent) {
 
         LayoutInflater inflater = mContext.getLayoutInflater();
-        View mView = inflater.inflate(R.layout.categories_detail_item, null, true);
+        View mRow = inflater.inflate(R.layout.categories_detail_item, null, true);
 
         ImageView mImageView = (ImageView) view.findViewById(R.id.detail_image);
         TextView mTextView = (TextView) view.findViewById(R.id.detail_title);
@@ -40,6 +40,6 @@ public class CategoriesDetailAdapter extends ArrayAdapter<String> {
         mImageView.setImageResource(mImageId[position]);
         mTextView.setText(mTitle[position]);
 
-        return mView;
+        return mRow;
     }
 }

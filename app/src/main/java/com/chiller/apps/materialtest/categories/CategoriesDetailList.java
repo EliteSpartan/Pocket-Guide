@@ -15,16 +15,6 @@ public class CategoriesDetailList extends ActionBarActivity {
 
     String[] mTitles;
     Integer[] mImageId = {
-            R.drawable.ic_launcher,
-            R.drawable.ic_launcher,
-            R.drawable.ic_launcher,
-            R.drawable.ic_launcher,
-            R.drawable.ic_launcher
-    };
-
-    Integer[] mImageId2 = {
-            R.drawable.ic_launcher,
-            R.drawable.ic_launcher,
             R.drawable.ic_launcher
     };
 
@@ -39,15 +29,17 @@ public class CategoriesDetailList extends ActionBarActivity {
         }
 
         String title = getIntent().getStringExtra("title");
-        Integer itemNumber = getIntent().getIntExtra("itemNumber", 0);
+        //Integer itemNumber = getIntent().getIntExtra("itemNumber", 0);
+
         getSupportActionBar().setTitle(title);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        /*mListView = (ListView) findViewById(R.id.detail_list);
+        mListView = (ListView) findViewById(R.id.detail_list);
 
         mTitles = getResources().getStringArray(R.array.pc_categories_detail_titles);
-        CategoriesDetailAdapter listAdapter = new CategoriesDetailAdapter(CategoriesDetailList.this, mTitles, mImageId);
-        mListView.setAdapter(listAdapter);*/
+
+        CategoriesDetailAdapter listAdapter = new CategoriesDetailAdapter(this, mTitles, mImageId);
+        mListView.setAdapter(listAdapter);
     }
 
 
