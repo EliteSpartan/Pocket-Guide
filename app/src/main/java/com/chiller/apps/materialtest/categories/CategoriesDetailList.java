@@ -39,7 +39,7 @@ public class CategoriesDetailList extends ActionBarActivity {
         mTitles = getResources().getStringArray(R.array.pc_categories_detail_titles);
 
         CategoriesDetailAdapter listAdapter = new CategoriesDetailAdapter(this, mTitles, mImageId);
-        mListView.setAdapter(listAdapter);
+        //mListView.setAdapter(listAdapter); // Causes the app to crash
     }
 
 
