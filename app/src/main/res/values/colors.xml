@@ -6,5 +6,6 @@
     <color name="colorAccent">#616161</color>
 
     <color name="light_grey">#CCCCCC</color>
+    <color name="tabsScrollColor">#FFFFFF</color>
 
 </resources>
