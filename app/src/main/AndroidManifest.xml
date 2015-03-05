@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.chiller.apps.materialtest" >
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
@@ -45,7 +47,7 @@
             android:label="@string/title_activity_categories_detail_list" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.chiller.apps.materialtest.minecraft.MinecraftPC" />
+                android:value=".minecraft.MinecraftPCOld" />
         </activity>
     </application>
 
