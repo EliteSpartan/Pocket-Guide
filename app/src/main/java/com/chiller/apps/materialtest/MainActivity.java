@@ -24,6 +24,7 @@ import android.widget.ListView;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.chiller.apps.materialtest.adapters.DrawerList;
 import com.chiller.apps.materialtest.minecraft.MinecraftPC;
+import com.chiller.apps.materialtest.minecraft.MinecraftPCOld;
 import com.chiller.apps.materialtest.minecraft.MinecraftPE;
 import com.nispok.snackbar.Snackbar;
 import com.nispok.snackbar.SnackbarManager;
@@ -84,6 +85,8 @@ public class MainActivity extends ActionBarActivity {
         if (savedInstanceState == null) {
             displayView(0);
         }
+
+        //new RequestTask().execute("http://pure.chiller.x10.mx/data/Minecraft-Blocks.json");
     }
 
     @Override
@@ -265,4 +268,6 @@ public class MainActivity extends ActionBarActivity {
         mTitle = title;
         getSupportActionBar().setTitle(mTitle);
     }
+
+
 }
