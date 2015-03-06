@@ -11,9 +11,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
+import com.chiller.apps.materialtest.Adapters.TabListAdapter;
 import com.chiller.apps.materialtest.R;
 import com.chiller.apps.materialtest.SQLiteHelper;
-import com.chiller.apps.materialtest.adapters.TabListAdapter;
 
 import java.util.ArrayList;
 

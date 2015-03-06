@@ -1,13 +1,13 @@
 package com.chiller.apps.materialtest;
 
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
 
-import com.chiller.apps.materialtest.adapters.CategoriesDetailAdapter;
+import com.chiller.apps.materialtest.Adapters.CategoriesDetailAdapter;
 
 public class CategoriesDetailList extends ActionBarActivity {
 
