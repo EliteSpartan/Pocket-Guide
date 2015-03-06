@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "com.chiller.apps.materialtest"
-        minSdkVersion 15
+        minSdkVersion 16
         targetSdkVersion 21
         versionCode 1
         versionName "1.0"
@@ -26,4 +26,6 @@ dependencies {
     compile 'com.nispok:snackbar:2.6.1'
     compile 'com.afollestad:material-dialogs:0.5.2'
     compile 'com.google.android.gms:play-services:6.5.87'
+    compile 'com.google.code.gson:gson:2.3.1'
+    compile 'com.readystatesoftware.sqliteasset:sqliteassethelper:+'
 }

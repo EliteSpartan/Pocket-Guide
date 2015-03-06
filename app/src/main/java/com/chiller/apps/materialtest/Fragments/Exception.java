@@ -11,7 +11,7 @@ import com.chiller.apps.materialtest.R;
 /**
  * Created by Anthony on 1/03/2015.
  */
-public class Tab2 extends Fragment {
+public class Exception extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

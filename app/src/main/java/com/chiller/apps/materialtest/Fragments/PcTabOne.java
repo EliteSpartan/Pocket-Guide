@@ -1,7 +1,6 @@
 package com.chiller.apps.materialtest.Fragments;
 
 import android.app.Activity;
-import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -10,21 +9,18 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.chiller.apps.materialtest.R;
 import com.chiller.apps.materialtest.SQLiteHelper;
-import com.chiller.apps.materialtest.adapters.DrawerList;
 import com.chiller.apps.materialtest.adapters.TabListAdapter;
-import com.chiller.apps.materialtest.minecraft.MinecraftPC;
 
 import java.util.ArrayList;
 
 /**
  * Created by Anthony on 1/03/2015.
  */
-public class Tab1 extends Fragment {
+public class PcTabOne extends Fragment {
 
     Activity mContext;
     SQLiteHelper dbHelper;
@@ -33,7 +29,7 @@ public class Tab1 extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle SavedInstanceState){
 
-        View view = inflater.inflate(R.layout.tab1, container, false);
+        View view = inflater.inflate(R.layout.pc_building_blocks, container, false);
         return view;
     }
 
