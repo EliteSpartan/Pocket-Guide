@@ -1,5 +1,6 @@
-package com.chiller.apps.materialtest.Adapters;
+package com.chiller.apps.materialtest.Adapter;
 
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
@@ -12,27 +13,38 @@ import com.chiller.apps.materialtest.Fragments.PcTabOne;
  */
 public class ViewPagerAdapter extends FragmentStatePagerAdapter {
 
-    CharSequence Titles[];
-    int NumbOfTabs;
+    private final CharSequence Titles[];
+    private final int NumbOfTabs;
+    int mToolbarHeight;
 
-    public ViewPagerAdapter(FragmentManager fm, CharSequence mTitles[], int mNumbOfTabs) {
+    Bundle bundle;
+
+    public ViewPagerAdapter(FragmentManager fm, CharSequence mTitles[], int mNumbOfTabs, int mToolbarHeight) {
 
         super(fm);
 
         this.NumbOfTabs = mNumbOfTabs;
         this.Titles = mTitles;
+        this.mToolbarHeight = mToolbarHeight;
     }
 
     @Override
     public Fragment getItem(int position) {
 
         if (position == 0) {
+
             PcTabOne pcTabOne = new PcTabOne();
+            bundle = new Bundle();
+
+            bundle.putInt("ToolbarHeight", mToolbarHeight);
+            pcTabOne.setArguments(bundle);
             return pcTabOne;
-        }
-        else {
+
+        } else {
+
             Exception exception = new Exception();
             return exception;
+
         }
     }
 

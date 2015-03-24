@@ -1,22 +1,26 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
 
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="actionBarPopupTheme">@style/ThemeOverlay.AppCompat.Light</item>
 
         <item name="android:textColorPrimary">@android:color/white</item>
 
         <item name="windowActionBar">false</item>
+        <item name="android:windowActionModeOverlay">true</item>
         <item name="windowActionModeOverlay">true</item>
 
         <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
         <item name="android:textColorSecondary">@android:color/white</item>
         
         <item name="android:activatedBackgroundIndicator">@drawable/drawer_item_click</item>
+        
+        <item name="android:windowContentOverlay">@drawable/toolbar_shadow</item>
 
     </style>
     
