@@ -49,11 +49,11 @@ public class PcTabOne extends Fragment {
         View mToolbarView = getActivity().findViewById(R.id.toolbar_layout);
 
         int mToolbarHeight = Math.round(getResources().getDimension(R.dimen.abc_action_bar_default_height_material));
+        int mHeaderHeight = mToolbarView.getMeasuredHeight();
 
         mGridView = (GridView) getActivity().findViewById(R.id.list);
         mGridView.setPadding(mGridView.getPaddingLeft(),
-                mGridView.getPaddingTop() + Math.round(
-                getResources().getDimension(R.dimen.abc_action_bar_default_height_material)),
+                mGridView.getPaddingTop() + mHeaderHeight,
                     // Sets the padding for the top so the grid is under the toolbar
                 mGridView.getPaddingRight(),
                 mGridView.getPaddingBottom());
@@ -88,28 +88,6 @@ public class PcTabOne extends Fragment {
                 .build();
         mGridView.setOnScrollListener(mScrollListener);
     }
-
-    /*public GridView.OnScrollListener mOnScroll = new GridView.OnScrollListener() {
-
-        @Override
-        public void onScrollStateChanged(AbsListView view, int scrollState) {
-
-        }
-
-        @Override
-        public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
-
-            final int currentFirstVisibleItem = view.getFirstVisiblePosition();
-            mLastFirstVisibleItem = firstVisibleItem;
-
-            if (currentFirstVisibleItem > mLastFirstVisibleItem){
-                ((MinecraftPC) getActivity()).hideToolbar();
-            } else if (currentFirstVisibleItem < mLastFirstVisibleItem) {
-                //((ActionBarActivity) getActivity()).getSupportActionBar().show();
-                ((MinecraftPC) getActivity()).showToolbar();
-            }
-        }
-    }; // Way to do the toolbar hide on scroll*/
 
     private static abstract class DatabaseEntry implements BaseColumns {
 

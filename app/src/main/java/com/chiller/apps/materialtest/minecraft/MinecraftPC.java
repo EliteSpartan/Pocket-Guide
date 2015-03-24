@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.animation.AccelerateInterpolator;
 import android.widget.LinearLayout;
 
 import com.chiller.apps.materialtest.Adapter.ViewPagerAdapter;
@@ -54,7 +53,9 @@ public class MinecraftPC extends ActionBarActivity {
         // Sets the Back Arrow in the Toolbar
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        mToolbarLayout = (LinearLayout) findViewById(R.id.toolbar_layout);
         int toolbarHeight = toolbar.getMeasuredHeight();
+        int mToolbarLayoutHeight = mToolbarLayout.getMeasuredHeight();
 
         mViewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager(), mTitles, mTabs, toolbarHeight);
         mViewPager = (ViewPager) findViewById(R.id.pager);
@@ -69,36 +70,6 @@ public class MinecraftPC extends ActionBarActivity {
         });
 
         mSlidingTabs.setViewPager(mViewPager);
-        mToolbarLayout = (LinearLayout) findViewById(R.id.toolbar_layout);
-    }
 
-    public void hideToolbar() {
-        toolbar.animate()
-                .translationY(-toolbar.getBottom() + 12)
-                .setInterpolator(new AccelerateInterpolator(2))
-                .start();
-        mSlidingTabs.animate()
-                .translationY(-toolbar.getBottom() + 12)
-                .setInterpolator(new AccelerateInterpolator(2))
-                .start();
-        /*mToolbarShadow.animate()
-                .translationY(-toolbar.getBottom() + 12)
-                .setInterpolator(new AccelerateInterpolator(2))
-                .start();*/
-    }
-
-    public void showToolbar() {
-        toolbar.animate()
-                .translationY(0)
-                .setInterpolator(new AccelerateInterpolator(2))
-                .start();
-        mSlidingTabs.animate()
-                .translationY(0)
-                .setInterpolator(new AccelerateInterpolator(2))
-                .start();
-        /*mToolbarShadow.animate()
-                .translationY(0)
-                .setInterpolator(new AccelerateInterpolator(2))
-                .start();*/
     }
 }
