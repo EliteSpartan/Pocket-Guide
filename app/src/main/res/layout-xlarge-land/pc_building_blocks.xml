@@ -4,8 +4,8 @@
     android:layout_height="match_parent">
 
     <GridView
-        android:paddingLeft="100dp"
-        android:paddingRight="100dp"
+        android:layout_marginRight="100dp"
+        android:layout_marginLeft="100dp"
         android:paddingBottom="8dp"
         android:paddingTop="8dp"
         android:clipToPadding="false"
