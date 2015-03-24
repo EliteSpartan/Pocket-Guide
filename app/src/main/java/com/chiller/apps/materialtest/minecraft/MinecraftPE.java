@@ -1,15 +1,15 @@
 package com.chiller.apps.materialtest.minecraft;
 
+import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.chiller.apps.materialtest.Adapter.ViewPagerAdapter;
 import com.chiller.apps.materialtest.R;
 import com.chiller.apps.materialtest.TabAdapters.SlidingTabLayout;
-import com.chiller.apps.materialtest.adapters.ViewPagerAdapter;
 
 public class MinecraftPE extends ActionBarActivity {
 
@@ -38,7 +38,7 @@ public class MinecraftPE extends ActionBarActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             // Adds the back button to the Toolbar
 
-        adapter = new ViewPagerAdapter(getSupportFragmentManager(), Titles, NumbOfTabs);
+        adapter = new ViewPagerAdapter(getSupportFragmentManager(), Titles, NumbOfTabs, 0);
 
         pager = (ViewPager) findViewById(R.id.pager);
         pager.setAdapter(adapter);

@@ -7,7 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
 
-import com.chiller.apps.materialtest.Adapters.CategoriesDetailAdapter;
+import com.chiller.apps.materialtest.Adapter.CategoriesDetailAdapter;
 
 public class CategoriesDetailList extends ActionBarActivity {
 

@@ -1,8 +1,8 @@
 package com.chiller.apps.materialtest.minecraft;
 
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -11,9 +11,9 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.chiller.apps.materialtest.R;
+import com.chiller.apps.materialtest.Adapter.CategoriesListAdapter;
 import com.chiller.apps.materialtest.CategoriesDetailList;
-import com.chiller.apps.materialtest.adapters.CategoriesListAdapter;
+import com.chiller.apps.materialtest.R;
 
 public class MinecraftPCOld extends ActionBarActivity {
 

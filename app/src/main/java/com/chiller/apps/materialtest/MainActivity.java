@@ -20,9 +20,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 
 import com.afollestad.materialdialogs.MaterialDialog;
-import com.chiller.apps.materialtest.Adapters.DrawerList;
+import com.chiller.apps.materialtest.Adapter.DrawerList;
 import com.chiller.apps.materialtest.minecraft.MinecraftPC;
 import com.chiller.apps.materialtest.minecraft.MinecraftPE;
 import com.nispok.snackbar.Snackbar;
@@ -42,6 +43,7 @@ public class MainActivity extends ActionBarActivity {
     };
 
     ListView mDrawerList;
+    RelativeLayout mDrawerRelative;
     Context context;
     SharedPreferences onFirstRun = null;
 
@@ -62,6 +64,7 @@ public class MainActivity extends ActionBarActivity {
 
         // Initializes the Navigation Drawer
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        mDrawerRelative = (RelativeLayout) findViewById(R.id.drawer);
         mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, toolbar,
                 R.string.app_name, R.string.app_name);
         mDrawerLayout.setDrawerListener(mDrawerToggle);
@@ -164,7 +167,7 @@ public class MainActivity extends ActionBarActivity {
     public void onBackPressed() {
 
         if (mDrawerLayout.isDrawerOpen(Gravity.START)) {
-            mDrawerLayout.closeDrawers();
+            mDrawerLayout.closeDrawer(mDrawerRelative);
             return;
         }
 
@@ -252,7 +255,7 @@ public class MainActivity extends ActionBarActivity {
             mDrawerList.setItemChecked(position, true);
             mDrawerList.setSelection(position);
             setTitle(mDrawerTitles[position]);
-            mDrawerLayout.closeDrawer(mDrawerList);
+            mDrawerLayout.closeDrawer(mDrawerRelative);
         }
 
         else {

@@ -1,18 +1,17 @@
 package com.chiller.apps.materialtest.minecraft;
 
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.animation.AccelerateInterpolator;
+import android.widget.LinearLayout;
 
+import com.chiller.apps.materialtest.Adapter.ViewPagerAdapter;
 import com.chiller.apps.materialtest.R;
 import com.chiller.apps.materialtest.TabAdapters.SlidingTabLayout;
-import com.chiller.apps.materialtest.adapters.ViewPagerAdapter;
-
-import java.util.ArrayList;
-import java.util.List;
+import com.github.ksoichiro.android.observablescrollview.ScrollState;
+import com.github.ksoichiro.android.observablescrollview.TouchInterceptionFrameLayout;
 
 public class MinecraftPC extends ActionBarActivity {
 
@@ -20,10 +19,12 @@ public class MinecraftPC extends ActionBarActivity {
     SlidingTabLayout mSlidingTabs;
     ViewPager mViewPager;
     ViewPagerAdapter mViewPagerAdapter;
+    LinearLayout mToolbarLayout;
 
-    String TABLE_NAME = "PC Decorations";
-    String COLUMN_ONE = "id";
-    String COLUMN_TWO = "Name";
+    int mSlop;
+    boolean mScrolled;
+    ScrollState mLastScrollState;
+    TouchInterceptionFrameLayout mInterceptionLayout;
 
     int mTabs = 10;
     CharSequence mTitles[] = {
@@ -53,7 +54,9 @@ public class MinecraftPC extends ActionBarActivity {
         // Sets the Back Arrow in the Toolbar
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        mViewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager(), mTitles, mTabs);
+        int toolbarHeight = toolbar.getMeasuredHeight();
+
+        mViewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager(), mTitles, mTabs, toolbarHeight);
         mViewPager = (ViewPager) findViewById(R.id.pager);
         mViewPager.setAdapter(mViewPagerAdapter);
 
@@ -66,6 +69,36 @@ public class MinecraftPC extends ActionBarActivity {
         });
 
         mSlidingTabs.setViewPager(mViewPager);
+        mToolbarLayout = (LinearLayout) findViewById(R.id.toolbar_layout);
+    }
 
+    public void hideToolbar() {
+        toolbar.animate()
+                .translationY(-toolbar.getBottom() + 12)
+                .setInterpolator(new AccelerateInterpolator(2))
+                .start();
+        mSlidingTabs.animate()
+                .translationY(-toolbar.getBottom() + 12)
+                .setInterpolator(new AccelerateInterpolator(2))
+                .start();
+        /*mToolbarShadow.animate()
+                .translationY(-toolbar.getBottom() + 12)
+                .setInterpolator(new AccelerateInterpolator(2))
+                .start();*/
+    }
+
+    public void showToolbar() {
+        toolbar.animate()
+                .translationY(0)
+                .setInterpolator(new AccelerateInterpolator(2))
+                .start();
+        mSlidingTabs.animate()
+                .translationY(0)
+                .setInterpolator(new AccelerateInterpolator(2))
+                .start();
+        /*mToolbarShadow.animate()
+                .translationY(0)
+                .setInterpolator(new AccelerateInterpolator(2))
+                .start();*/
     }
 }

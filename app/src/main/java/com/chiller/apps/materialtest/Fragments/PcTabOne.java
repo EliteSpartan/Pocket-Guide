@@ -9,9 +9,11 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListView;
+import android.widget.GridView;
 
-import com.chiller.apps.materialtest.Adapters.TabListAdapter;
+import com.chiller.apps.materialtest.Adapter.TabListAdapter;
+import com.chiller.apps.materialtest.QuickReturn.QuickReturnListViewOnScrollListener;
+import com.chiller.apps.materialtest.QuickReturn.QuickReturnViewType;
 import com.chiller.apps.materialtest.R;
 import com.chiller.apps.materialtest.SQLiteHelper;
 
@@ -22,9 +24,13 @@ import java.util.ArrayList;
  */
 public class PcTabOne extends Fragment {
 
-    Activity mContext;
+    Activity mActivity;
     SQLiteHelper dbHelper;
-    ListView mListView;
+    GridView mGridView;
+    Bundle bundle;
+    int mLastFirstVisibleItem;
+
+    protected QuickReturnListViewOnScrollListener mScrollListener;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle SavedInstanceState){
@@ -37,9 +43,20 @@ public class PcTabOne extends Fragment {
 
         super.onActivityCreated(savedInstanceState);
 
-        mContext = getActivity();
+        mActivity = getActivity();
+        bundle = new Bundle();
 
-        mListView = (ListView) getActivity().findViewById(R.id.list);
+        View mToolbarView = getActivity().findViewById(R.id.toolbar_layout);
+
+        int mToolbarHeight = Math.round(getResources().getDimension(R.dimen.abc_action_bar_default_height_material));
+
+        mGridView = (GridView) getActivity().findViewById(R.id.list);
+        mGridView.setPadding(mGridView.getPaddingLeft(),
+                mGridView.getPaddingTop() + Math.round(
+                getResources().getDimension(R.dimen.abc_action_bar_default_height_material)),
+                    // Sets the padding for the top so the grid is under the toolbar
+                mGridView.getPaddingRight(),
+                mGridView.getPaddingBottom());
 
         // Initialises the SQLiteHelper Class
         dbHelper = new SQLiteHelper(getActivity());
@@ -59,13 +76,42 @@ public class PcTabOne extends Fragment {
 
         // Gets the String values from the DB Array
         String[] mTitle = listNames.toArray(new String[listNames.size()]);
-        TabListAdapter listAdapter = new TabListAdapter(mContext, mTitle); //mImage
+        TabListAdapter listAdapter = new TabListAdapter(mActivity, mTitle); //mImage
 
-        mListView.setAdapter(listAdapter);
+        mGridView.setAdapter(listAdapter);
         mCursor.close();
+
+        mScrollListener = new QuickReturnListViewOnScrollListener.Builder(QuickReturnViewType.HEADER)
+                .header(mToolbarView)
+                .minHeaderTranslation(-mToolbarHeight)
+                .isSnappable(true)
+                .build();
+        mGridView.setOnScrollListener(mScrollListener);
     }
 
-    public static abstract class DatabaseEntry implements BaseColumns {
+    /*public GridView.OnScrollListener mOnScroll = new GridView.OnScrollListener() {
+
+        @Override
+        public void onScrollStateChanged(AbsListView view, int scrollState) {
+
+        }
+
+        @Override
+        public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
+
+            final int currentFirstVisibleItem = view.getFirstVisiblePosition();
+            mLastFirstVisibleItem = firstVisibleItem;
+
+            if (currentFirstVisibleItem > mLastFirstVisibleItem){
+                ((MinecraftPC) getActivity()).hideToolbar();
+            } else if (currentFirstVisibleItem < mLastFirstVisibleItem) {
+                //((ActionBarActivity) getActivity()).getSupportActionBar().show();
+                ((MinecraftPC) getActivity()).showToolbar();
+            }
+        }
+    }; // Way to do the toolbar hide on scroll*/
+
+    private static abstract class DatabaseEntry implements BaseColumns {
 
         public static final String TABLE_NAME = "PC_Build";
         public static final String COLUMN_NAME_TITLE = "Name";
