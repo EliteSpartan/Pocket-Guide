@@ -31,4 +31,10 @@
 
     </style>
 
+    <style name="CardViewStyle" parent="CardView.Light">
+
+        <item name="android:foreground">@drawable/card_item_click</item>
+
+    </style>
+
 </resources>

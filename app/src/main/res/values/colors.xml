@@ -8,4 +8,7 @@
     <color name="light_grey">#CCCCCC</color>
     <color name="tabsScrollColor">#FFFFFF</color>
 
+    <color name="cardTouch">#25616161</color>
+    <color name="cardTouchHold">#35616161</color>
+
 </resources>

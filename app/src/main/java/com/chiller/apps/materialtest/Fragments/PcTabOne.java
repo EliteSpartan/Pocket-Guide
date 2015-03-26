@@ -28,7 +28,6 @@ public class PcTabOne extends Fragment {
     SQLiteHelper dbHelper;
     GridView mGridView;
     Bundle bundle;
-    int mLastFirstVisibleItem;
 
     protected QuickReturnListViewOnScrollListener mScrollListener;
 

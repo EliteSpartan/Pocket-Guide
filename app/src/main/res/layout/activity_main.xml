@@ -6,26 +6,33 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
     
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
         android:orientation="vertical">
 
-        <include layout="@layout/toolbar"/>
+        <FrameLayout
+            android:paddingTop="@dimen/abc_action_bar_default_height_material"
+            android:clipToPadding="false"
+            android:id="@+id/content_frame"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <include layout="@layout/toolbar"
+            android:layout_height="@dimen/abc_action_bar_default_height_material"
+            android:layout_width="match_parent"
+            android:id="@+id/toolbar"/>
 
         <View
             android:background="@drawable/toolbar_shadow"
             android:id="@+id/toolbar_shadow"
+            android:layout_below="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="6dp"/>
 
-        <FrameLayout
-            android:id="@+id/content_frame"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
-
-    </LinearLayout>
+    </RelativeLayout>
 
     <RelativeLayout
         android:orientation="horizontal"

@@ -19,6 +19,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.FrameLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 
@@ -44,6 +45,7 @@ public class MainActivity extends ActionBarActivity {
 
     ListView mDrawerList;
     RelativeLayout mDrawerRelative;
+    FrameLayout mContent;
     Context context;
     SharedPreferences onFirstRun = null;
 
@@ -65,6 +67,7 @@ public class MainActivity extends ActionBarActivity {
         // Initializes the Navigation Drawer
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawerRelative = (RelativeLayout) findViewById(R.id.drawer);
+        mContent = (FrameLayout) findViewById(R.id.content_frame);
         mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, toolbar,
                 R.string.app_name, R.string.app_name);
         mDrawerLayout.setDrawerListener(mDrawerToggle);
@@ -194,7 +197,8 @@ public class MainActivity extends ActionBarActivity {
                 .text("Help is currently not available.") // text to display
                 .show(this); // activity where it is displayed**/
 
-        Intent startHelp = new Intent(Intent.ACTION_VIEW, Uri.parse("http://pure.chiller.x10.mx/apps/help")); // Not Final Page
+        Intent startHelp = new Intent(Intent.ACTION_VIEW, Uri.parse("http://pure.chiller.x10.mx/apps/help"));
+            // Not Final Page
         startActivity(startHelp);
 
     }
@@ -202,7 +206,8 @@ public class MainActivity extends ActionBarActivity {
     // When Drawer Feedback is Clicked
     public void launchFeedback(View view) {
 
-        Intent startFeedback = new Intent(Intent.ACTION_VIEW, Uri.parse("http://pure.chiller.x10.mx/apps/help")); // Not Final Page
+        Intent startFeedback = new Intent(Intent.ACTION_VIEW, Uri.parse("http://pure.chiller.x10.mx/apps/help"));
+            // Not Final Page
         startActivity(startFeedback);
     }
 
