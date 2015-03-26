@@ -7,6 +7,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:text="Tab 2"/>
+        android:maxLength="100"
+        android:text="Sorry, but the current tab could not be loaded."/>
 
 </RelativeLayout>
