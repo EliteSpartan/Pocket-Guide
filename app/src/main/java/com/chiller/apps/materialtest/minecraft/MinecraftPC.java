@@ -9,8 +9,6 @@ import android.widget.LinearLayout;
 import com.chiller.apps.materialtest.Adapter.ViewPagerAdapter;
 import com.chiller.apps.materialtest.R;
 import com.chiller.apps.materialtest.TabAdapters.SlidingTabLayout;
-import com.github.ksoichiro.android.observablescrollview.ScrollState;
-import com.github.ksoichiro.android.observablescrollview.TouchInterceptionFrameLayout;
 
 public class MinecraftPC extends ActionBarActivity {
 
@@ -19,11 +17,6 @@ public class MinecraftPC extends ActionBarActivity {
     ViewPager mViewPager;
     ViewPagerAdapter mViewPagerAdapter;
     LinearLayout mToolbarLayout;
-
-    int mSlop;
-    boolean mScrolled;
-    ScrollState mLastScrollState;
-    TouchInterceptionFrameLayout mInterceptionLayout;
 
     int mTabs = 10;
     CharSequence mTitles[] = {

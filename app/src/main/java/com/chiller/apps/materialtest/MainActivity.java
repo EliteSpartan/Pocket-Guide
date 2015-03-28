@@ -45,6 +45,7 @@ public class MainActivity extends ActionBarActivity {
 
     ListView mDrawerList;
     RelativeLayout mDrawerRelative;
+    RelativeLayout mContainer;
     FrameLayout mContent;
     Context context;
     SharedPreferences onFirstRun = null;
@@ -67,7 +68,8 @@ public class MainActivity extends ActionBarActivity {
         // Initializes the Navigation Drawer
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawerRelative = (RelativeLayout) findViewById(R.id.drawer);
-        mContent = (FrameLayout) findViewById(R.id.content_frame);
+        mContainer = (RelativeLayout) findViewById(R.id.container);
+        //mContent = (FrameLayout) findViewById(R.id.content_frame);
         mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, toolbar,
                 R.string.app_name, R.string.app_name);
         mDrawerLayout.setDrawerListener(mDrawerToggle);
