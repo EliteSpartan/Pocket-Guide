@@ -16,7 +16,7 @@ public class DrawerList extends ArrayAdapter<String> {
     private final String[] text;
     private final Integer[] imageId;
 
-    public DrawerList (Activity context, String[] text, Integer[] imageId) {
+    public DrawerList(Activity context, String[] text, Integer[] imageId) {
 
         super(context, R.layout.drawer_list_item, text);
         this.context = context;
@@ -26,7 +26,7 @@ public class DrawerList extends ArrayAdapter<String> {
     }
 
     @Override
-    public View getView (int position, View view, ViewGroup parent) {
+    public View getView(int position, View view, ViewGroup parent) {
 
         LayoutInflater inflater = context.getLayoutInflater();
         View rowView = inflater.inflate(R.layout.drawer_list_item, null, true);
