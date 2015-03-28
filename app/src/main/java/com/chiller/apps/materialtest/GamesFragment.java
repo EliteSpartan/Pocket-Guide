@@ -2,7 +2,6 @@ package com.chiller.apps.materialtest;
 
 import android.app.Activity;
 import android.app.Fragment;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -21,7 +20,6 @@ public class GamesFragment extends Fragment {
 
     RecyclerView mRecyclerView;
     Activity context;
-    Intent intent;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState){
@@ -39,21 +37,22 @@ public class GamesFragment extends Fragment {
         mRecyclerView.hasFixedSize();
         mRecyclerView.setLayoutManager(new GridLayoutManager(getActivity(), setColumns()));
 
-        String[] mTitles = {"Minecraft PC"};
-        GamesAdapter adpapter = new GamesAdapter(mTitles);
-        mRecyclerView.setAdapter(adpapter);
+        String[] mTitles = {"Minecraft PC", "Minecraft PE"};
+        Integer[] mImageID = {R.drawable.minecraft_pc, R.drawable.minecraft_pe};
+        GamesAdapter adapter = new GamesAdapter(mTitles, mImageID);
+        mRecyclerView.setAdapter(adapter);
     }
 
     // Dynamically gets sets the width of the columns for the Recycler View
     public int setColumns() {
+
         Display display = getActivity().getWindowManager().getDefaultDisplay();
         DisplayMetrics outMetrics = new DisplayMetrics();
         display.getMetrics(outMetrics);
 
         float density = getResources().getDisplayMetrics().density;
         float dpWidth = outMetrics.widthPixels / density;
-        int columns = Math.round(dpWidth / 180);
 
-        return columns;
+        return Math.round(dpWidth / 180);
     }
 }

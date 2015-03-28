@@ -6,7 +6,9 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.chiller.apps.materialtest.R;
 import com.chiller.apps.materialtest.minecraft.MinecraftPC;
@@ -17,12 +19,12 @@ import com.chiller.apps.materialtest.minecraft.MinecraftPC;
 public class GamesAdapter extends RecyclerView.Adapter<GamesAdapter.GamesViewHolder> {
 
     private String[] mTitles;
-    // private Integer[] mImageID;
+    private Integer[] mImageID;
 
-    public GamesAdapter(String[] mTitles) { // Integer[] mImageID
+    public GamesAdapter(String[] mTitles, Integer[] mImageID) {
 
         this.mTitles = mTitles;
-        // this.mImageID = mImageID
+        this.mImageID = mImageID;
     }
 
     @Override
@@ -36,7 +38,7 @@ public class GamesAdapter extends RecyclerView.Adapter<GamesAdapter.GamesViewHol
     public void onBindViewHolder(GamesViewHolder gamesViewHolder, int position) {
 
         gamesViewHolder.viewName.setText(mTitles[position]);
-        // gamesViewHolder.viewPicture.setImageResource(mImageID[position]);
+        gamesViewHolder.viewPicture.setImageResource(mImageID[position]);
     }
 
     @Override
@@ -48,7 +50,7 @@ public class GamesAdapter extends RecyclerView.Adapter<GamesAdapter.GamesViewHol
     public static class GamesViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         public TextView viewName;
-        // public ImageView viewPicture;
+        public ImageView viewPicture;
         private final Context context;
 
         public GamesViewHolder(View itemView) {
@@ -58,7 +60,7 @@ public class GamesAdapter extends RecyclerView.Adapter<GamesAdapter.GamesViewHol
             context = itemView.getContext();
 
             viewName = (TextView) itemView.findViewById(R.id.card_text);
-            // viewPicture = (ImageView) itemView.findViewById(R.id.card_image);
+            viewPicture = (ImageView) itemView.findViewById(R.id.card_image);
         }
 
         @Override
@@ -66,14 +68,16 @@ public class GamesAdapter extends RecyclerView.Adapter<GamesAdapter.GamesViewHol
 
             Intent intent;
             switch (getPosition()){
+
                 case 0:
                     intent = new Intent(context, MinecraftPC.class);
+                    context.startActivity(intent);
                     break;
+
                 default:
-                    intent = new Intent(context, MinecraftPC.class);
-                    break;
+                    Toast.makeText(context,"Sorry, but the Activity isn't available", Toast.LENGTH_SHORT)
+                            .show();
             }
-            context.startActivity(intent);
 
         }
     }
