@@ -29,6 +29,7 @@
             android:layout_height="@dimen/abc_action_bar_default_height_material"
             android:background="@color/colorPrimary"
             android:clipToPadding="false"
+            android:elevation="6dp"
             android:id="@+id/toolbar"/>
 
         <com.chiller.apps.materialtest.TabAdapters.SlidingTabLayout
@@ -39,14 +40,8 @@
             android:clipToPadding="false"
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
+            android:elevation="6dp"
             android:background="@color/colorPrimary"/>
-
-        <View
-            android:layout_below="@+id/tabs"
-            android:background="@drawable/toolbar_shadow"
-            android:id="@+id/toolbar_shadow"
-            android:layout_width="match_parent"
-            android:layout_height="6dp"/>
 
     </RelativeLayout>
 

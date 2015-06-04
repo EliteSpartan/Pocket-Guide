@@ -1,6 +1,7 @@
 package com.chiller.apps.materialtest.Fragments;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -9,7 +10,9 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.Toast;
 
 import com.chiller.apps.materialtest.Adapter.TabListAdapter;
 import com.chiller.apps.materialtest.QuickReturn.QuickReturnListViewOnScrollListener;
@@ -87,6 +90,19 @@ public class PcTabOne extends Fragment {
                 .isSnappable(true)
                 .build();
         mGridView.setOnScrollListener(mScrollListener);
+        mGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                switch (position){
+
+                    default:
+                        Toast.makeText(mActivity, "Sorry, but the Activity isn't available",
+                                Toast.LENGTH_SHORT).show();
+
+                }
+            }
+        });
+
     }
 
     private static abstract class DatabaseEntry implements BaseColumns {

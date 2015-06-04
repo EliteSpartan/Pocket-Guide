@@ -6,5 +6,6 @@
     app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
     android:layout_width="match_parent"
     android:layout_height="@dimen/abc_action_bar_default_height_material"
+    android:elevation="6dp"
     android:background="@color/colorPrimary"
     android:id="@+id/toolbar"/>

@@ -6,19 +6,17 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+
         <item name="actionBarPopupTheme">@style/ThemeOverlay.AppCompat.Light</item>
-
-        <item name="android:textColorPrimary">@android:color/white</item>
-
+        <item name="actionBarTheme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
+        <item name="android:textColorPrimary">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
         <item name="windowActionBar">false</item>
         <item name="android:windowActionModeOverlay">true</item>
-        <item name="windowActionModeOverlay">true</item>
-        <item name="android:windowTranslucentStatus">false</item>
+        <item name="windowActionModeOverlay">false</item>
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
-
+        <item name="android:navigationIcon">?attr/homeAsUpIndicator</item>
         <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
         <item name="android:textColorSecondary">@android:color/white</item>
-
         <item name="android:activatedBackgroundIndicator">@drawable/drawer_item_click</item>
 
     </style>
@@ -27,6 +25,32 @@
 
         <item name="spinBars">true</item>
         <item name="color">@android:color/white</item>
+
+    </style>
+
+    <style name="AppTheme.Drawer" parent="Theme.AppCompat.Light.NoActionBar">
+
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="actionBarPopupTheme">@style/ThemeOverlay.AppCompat.Light</item>
+        <item name="actionBarTheme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowActionModeOverlay">true</item>
+        <item name="windowActionModeOverlay">false</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:navigationIcon">?attr/homeAsUpIndicator</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
+        <item name="android:textColorSecondary">@android:color/white</item>
+        <item name="android:activatedBackgroundIndicator">@drawable/drawer_item_click</item>
+
+    </style>
+
+    <style name="headerElevation">
+
+        <item name="android:elevation">4dp</item>
 
     </style>
 

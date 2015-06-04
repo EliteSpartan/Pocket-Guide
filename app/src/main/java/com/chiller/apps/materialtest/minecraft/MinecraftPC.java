@@ -4,7 +4,10 @@ import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.DisplayMetrics;
+import android.view.Display;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 import com.chiller.apps.materialtest.Adapter.ViewPagerAdapter;
 import com.chiller.apps.materialtest.R;
@@ -16,7 +19,7 @@ public class MinecraftPC extends ActionBarActivity {
     SlidingTabLayout mSlidingTabs;
     ViewPager mViewPager;
     ViewPagerAdapter mViewPagerAdapter;
-    LinearLayout mToolbarLayout;
+    RelativeLayout mToolbarLayout;
 
     int mTabs = 10;
     CharSequence mTitles[] = {
@@ -46,7 +49,7 @@ public class MinecraftPC extends ActionBarActivity {
         // Sets the Back Arrow in the Toolbar
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        mToolbarLayout = (LinearLayout) findViewById(R.id.toolbar_layout);
+        mToolbarLayout = (RelativeLayout) findViewById(R.id.toolbar_layout);
         int toolbarHeight = toolbar.getMeasuredHeight();
         int mToolbarLayoutHeight = mToolbarLayout.getMeasuredHeight();
 
@@ -64,5 +67,17 @@ public class MinecraftPC extends ActionBarActivity {
 
         mSlidingTabs.setViewPager(mViewPager);
 
+    }
+
+    public int setColumns(int width) {
+
+        Display display = this.getWindowManager().getDefaultDisplay();
+        DisplayMetrics outMetrics = new DisplayMetrics();
+        display.getMetrics(outMetrics);
+
+        float density = getResources().getDisplayMetrics().density;
+        float dpWidth = outMetrics.widthPixels / density;
+
+        return Math.round(dpWidth / width);
     }
 }

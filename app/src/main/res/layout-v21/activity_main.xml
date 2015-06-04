@@ -22,7 +22,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
-        <include layout="@layout/toolbar"
+        <include
+            layout="@layout/toolbar"
             android:layout_height="@dimen/abc_action_bar_default_height_material"
             android:layout_width="match_parent"
             android:id="@+id/toolbar"/>
@@ -42,7 +43,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@android:color/background_light"
-            android:layout_marginTop="-2dp"
+            android:layout_marginTop="0dp"
             android:choiceMode="singleChoice"
             android:dividerHeight="0dp"
             android:theme="@style/Base.Theme.AppCompat.Light"

@@ -11,6 +11,7 @@
         android:paddingBottom="8dp"
         android:clipToPadding="false"
         android:columnWidth="100dp"
+        android:animateLayoutChanges="false"
         android:id="@+id/grid_list_games"
         android:divider="@android:color/transparent"
         android:layout_width="match_parent"

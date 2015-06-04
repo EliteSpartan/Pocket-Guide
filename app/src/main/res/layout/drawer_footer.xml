@@ -22,7 +22,7 @@
         android:clickable="true"
         android:textAllCaps="false"
         android:textSize="14sp"
-        android:background="@drawable/drawer_item_click"
+        android:background="?android:attr/selectableItemBackground"
         android:textColor="@android:color/black"
         android:text="@string/drawer_footer_settings"/>
 
@@ -36,7 +36,7 @@
         android:clickable="true"
         android:textAllCaps="false"
         android:textColor="@android:color/black"
-        android:background="@drawable/drawer_item_click"
+        android:background="?android:attr/selectableItemBackground"
         android:textSize="14sp"
         android:text="@string/drawer_footer_help"/>
 
@@ -50,7 +50,7 @@
         android:clickable="true"
         android:textAllCaps="false"
         android:textColor="@android:color/black"
-        android:background="@drawable/drawer_item_click"
+        android:background="?android:attr/selectableItemBackground"
         android:textSize="14sp"
         android:text="@string/drawer_footer_feedback"/>
 

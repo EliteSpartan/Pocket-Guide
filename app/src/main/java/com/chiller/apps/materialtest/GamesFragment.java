@@ -35,16 +35,26 @@ public class GamesFragment extends Fragment {
         context = getActivity();
         mRecyclerView = (RecyclerView) getActivity().findViewById(R.id.grid_list_games);
         mRecyclerView.hasFixedSize();
-        mRecyclerView.setLayoutManager(new GridLayoutManager(getActivity(), setColumns()));
+        mRecyclerView.setLayoutManager(new GridLayoutManager(getActivity(), setColumns(180)));
 
-        String[] mTitles = {"Minecraft PC", "Minecraft PE"};
-        Integer[] mImageID = {R.drawable.minecraft_pc, R.drawable.minecraft_pe};
-        GamesAdapter adapter = new GamesAdapter(mTitles, mImageID);
+        String[] mTitles = {
+                "Minecraft PC",
+                "Minecraft PE",
+                "Minecraft Xbox 360",
+                "Minecraft PlayStation 3"
+        }; // Titles
+        Integer[] mImageID = {
+                R.drawable.minecraft_pc,
+                R.drawable.minecraft_pe,
+                R.drawable.minecraft_x360,
+                R.drawable.minecraft_ps3
+        }; // Images
+        GamesAdapter adapter = new GamesAdapter(mTitles, mImageID); // Passes the information to the adapter
         mRecyclerView.setAdapter(adapter);
     }
 
     // Dynamically gets sets the width of the columns for the Recycler View
-    public int setColumns() {
+    public int setColumns(int width) {
 
         Display display = getActivity().getWindowManager().getDefaultDisplay();
         DisplayMetrics outMetrics = new DisplayMetrics();
@@ -53,6 +63,6 @@ public class GamesFragment extends Fragment {
         float density = getResources().getDisplayMetrics().density;
         float dpWidth = outMetrics.widthPixels / density;
 
-        return Math.round(dpWidth / 180);
+        return Math.round(dpWidth / width);
     }
 }

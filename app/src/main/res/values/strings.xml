@@ -65,5 +65,6 @@
             <item>Bread</item>
 
         </string-array>
+    <string name="title_activity_test">Test</string>
 
 </resources>

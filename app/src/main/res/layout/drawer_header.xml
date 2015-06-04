@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="169dp"
         android:id="@+id/drawer_header_image"
-        android:src="@drawable/picture"
+        android:src="@drawable/drawer_background"
         android:layout_marginBottom="4dp"/>
 
     <TextView

@@ -8,6 +8,7 @@ import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -25,6 +26,7 @@ import android.widget.RelativeLayout;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.chiller.apps.materialtest.Adapter.DrawerList;
+import com.chiller.apps.materialtest.ScrimInsets.ScrimInsetsFrameLayout;
 import com.chiller.apps.materialtest.minecraft.MinecraftPC;
 import com.chiller.apps.materialtest.minecraft.MinecraftPE;
 import com.nispok.snackbar.Snackbar;
@@ -44,11 +46,10 @@ public class MainActivity extends ActionBarActivity {
     };
 
     ListView mDrawerList;
-    RelativeLayout mDrawerRelative;
     RelativeLayout mContainer;
-    FrameLayout mContent;
     Context context;
     SharedPreferences onFirstRun = null;
+    ScrimInsetsFrameLayout insetsFrameLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,44 +58,18 @@ public class MainActivity extends ActionBarActivity {
 
         onFirstRun = getSharedPreferences("com.chiller.test", MODE_PRIVATE);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        if (toolbar != null) {
-            setSupportActionBar(toolbar);
-        }
-
-        mTitle = getSupportActionBar().getTitle(); // Gets the Title of the Toolbar
-        mDrawerTitles = getResources().getStringArray(R.array.drawer_titles_top);// Gets the Drawer Titles
-
-        // Initializes the Navigation Drawer
-        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-        mDrawerRelative = (RelativeLayout) findViewById(R.id.drawer);
-        mContainer = (RelativeLayout) findViewById(R.id.container);
-        //mContent = (FrameLayout) findViewById(R.id.content_frame);
-        mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, toolbar,
-                R.string.app_name, R.string.app_name);
-        mDrawerLayout.setDrawerListener(mDrawerToggle);
-        mDrawerLayout.setStatusBarBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
-        mDrawerList = (ListView) findViewById(R.id.list_top);
-
-        // Adds the Items to the List
-        DrawerList drawerAdapter = new DrawerList(MainActivity.this, mDrawerTitles, imageId);
-
-        View drawerHeader = getLayoutInflater().inflate(R.layout.drawer_header, null);
-        View drawerFooter = getLayoutInflater().inflate(R.layout.drawer_footer, null);
-        mDrawerList.addHeaderView(drawerHeader, null, false); // Adds the Drawer Header
-        mDrawerList.addFooterView(drawerFooter, null, false); // Adds the Drawer Footer
-
-        // Initializes the Drawer List
-        mDrawerList.setAdapter(drawerAdapter);
-        context = getApplicationContext();
-        mDrawerList.setOnItemClickListener(new DrawerClickListener());
-        mDrawerList.setSelector(R.drawable.drawer_item_click);
+        makeNavDrawer();
 
         if (savedInstanceState == null) {
             displayView(0);
         }
+    }
 
-        //new RequestTask().execute("http://pure.chiller.x10.mx/data/Minecraft-Blocks.json");
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+
     }
 
     @Override
@@ -173,23 +148,61 @@ public class MainActivity extends ActionBarActivity {
     public void onBackPressed() {
 
         if (mDrawerLayout.isDrawerOpen(Gravity.START)) {
-            mDrawerLayout.closeDrawer(mDrawerRelative);
+            mDrawerLayout.closeDrawer(insetsFrameLayout);
             return;
         }
 
         super.onBackPressed();
     }
 
+    public void makeNavDrawer() {
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        if (toolbar != null) {
+            setSupportActionBar(toolbar);
+        }
+
+        mTitle = getSupportActionBar().getTitle(); // Gets the Title of the Toolbar
+        mDrawerTitles = getResources().getStringArray(R.array.drawer_titles_top);// Gets the Drawer Titles
+
+        // Initializes the Navigation Drawer
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        insetsFrameLayout = (ScrimInsetsFrameLayout) findViewById(R.id.scrimInsetsFrameLayout);
+        mContainer = (RelativeLayout) findViewById(R.id.container);
+        //mContent = (FrameLayout) findViewById(R.id.content_frame);
+        mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, toolbar,
+                R.string.app_name, R.string.app_name);
+        mDrawerLayout.setDrawerListener(mDrawerToggle);
+        mDrawerLayout.setStatusBarBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
+        mDrawerList = (ListView) findViewById(R.id.list_top);
+
+        // Adds the Items to the List
+        DrawerList drawerAdapter = new DrawerList(MainActivity.this, mDrawerTitles, imageId);
+
+        View drawerHeader = getLayoutInflater().inflate(R.layout.drawer_header, null);
+        View drawerFooter = getLayoutInflater().inflate(R.layout.drawer_footer, null);
+        mDrawerList.addHeaderView(drawerHeader, null, false); // Adds the Drawer Header
+        mDrawerList.addFooterView(drawerFooter, null, false); // Adds the Drawer Footer
+
+        // Initializes the Drawer List
+        mDrawerList.setAdapter(drawerAdapter);
+        context = getApplicationContext();
+        mDrawerList.setOnItemClickListener(new DrawerClickListener());
+        mDrawerList.setSelector(R.drawable.drawer_item_click);
+    }
+
     // When Drawer Settings is clicked
     public void launchSettings (View view) {
 
-        SnackbarManager.show(
+        /*SnackbarManager.show(
                 Snackbar.with(getApplicationContext())
                 .text("There are no settings currently.")
                 .swipeToDismiss(false),
                 this
-        );
+        );*/
 
+        Intent intent = new Intent(MainActivity.this, PrefsActivity.class);
+        startActivity(intent);
     }
 
     // When Drawer Help is Clicked
@@ -263,7 +276,7 @@ public class MainActivity extends ActionBarActivity {
             mDrawerList.setItemChecked(position, true);
             mDrawerList.setSelection(position);
             setTitle(mDrawerTitles[position]);
-            mDrawerLayout.closeDrawer(mDrawerRelative);
+            mDrawerLayout.closeDrawer(insetsFrameLayout);
         }
 
         else {

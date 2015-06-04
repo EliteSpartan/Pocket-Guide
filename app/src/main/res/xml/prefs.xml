@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:summary="General"
+        android:title="General" >
+
+        <CheckBoxPreference
+            android:title="Auto-update Information"
+            android:summary="Automatically update block and item information"
+            android:checked="true"
+            android:key="autoUpdate"/>
+
+        <CheckBoxPreference
+            android:title="Offline Mode"
+            android:summary="Don't use any Internet connections"
+            android:checked="false"
+            android:key="offlineMode"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:summary="Notifications"
+        android:title="Notifications" >
+
+        <CheckBoxPreference
+            android:key="newBlocks"
+            android:checked="true"
+            android:summary="Get a notification when new blocks are added"
+            android:title="New Blocks" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:summary="Developer Information"
+        android:title="About">
+
+        <Preference
+            android:title="Open-source Licences"
+            android:key="openLicences"
+            android:summary="Licence details for open source software"/>
+
+        <Preference
+            android:title="Build Version"
+            android:key="cameron"
+            android:selectable="true"
+            android:summary="Version: 1.0.0 Beta 1"/>
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
